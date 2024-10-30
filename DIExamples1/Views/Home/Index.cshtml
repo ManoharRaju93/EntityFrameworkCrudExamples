@@ -1,0 +1,13 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.title = "Index";
+}
+
+<h2>The loaded Cities is : </h2>
+<ul class="list">
+@foreach(var item in Model)
+{
+    <li>@item</li>
+}
+</ul>

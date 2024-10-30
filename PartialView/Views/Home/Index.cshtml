@@ -1,0 +1,38 @@
+﻿
+<h1>Home</h1>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<button class="button button-blue-back" onclick="loadMobiles()" type="button" id="btnload">Load Mobiles</button>
+
+<div class="box Programming-Languages" id="loadmobilecontent">
+
+</div>
+<script>
+    async function loadMobiles() {
+        console.log("inside line 10");
+
+        try {
+            const response = await fetch("Programming-Languages");
+            const prgmlanguage = await response.text();
+
+            // Update HTML content using plain JavaScript
+            document.getElementById('loadmobilecontent').innerHTML = prgmlanguage;
+        } catch (error) {
+            console.error('Error loading mobiles:', error);
+        }
+    }
+
+
+</script>
+
+@* @{
+    ListModel listmodel = new ListModel();
+    listmodel.ListTitle = "Countries";
+    listmodel.ListContent = new List<string>()
+            {
+                "USA",
+                "AUSTRALIA",
+                "JAPAN"
+            };
+}
+
+<partial name="_ListPartialView" model="listmodel"></partial> *@
